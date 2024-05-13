@@ -1,7 +1,7 @@
 # TODOit
 Cloud Synced Todo Android Application
 
-##Features:
+# Features:
 
 1-Login
 
