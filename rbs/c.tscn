@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bar3yxmtk0y5y"]
+
+[ext_resource type="PackedScene" uid="uid://b3x1fg6fpuhvo" path="res://rbs/tri.tscn" id="1_81nhb"]
+[ext_resource type="Texture2D" uid="uid://dk4chlrnlkhqa" path="res://cloud.png" id="2_ivl1a"]
+
+[node name="Node2D" instance=ExtResource("1_81nhb")]
+
+[node name="Shape" parent="." index="0"]
+modulate = Color(0, 1, 0, 1)
+material = null
+scale = Vector2(1.43024, 1.43024)
+texture = ExtResource("2_ivl1a")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(3, -1)
+scale = Vector2(1.59895, 1.59895)
+polygon = PackedVector2Array(-19.3333, -36.6667, -1.33333, -36, 11.3333, -23.3333, 24, -26.6667, 37.3333, -20.6667, 44.6667, -6, 54, -4, 63.3333, 12, 59.3333, 28, 47.3333, 36.6667, -38, 38, -52.6667, 35.3333, -62.6667, 22.6667, -64.6667, 8.66667, -56, -3.33333, -45.3333, -7.33333, -44, -19.3333, -33.3333, -32.6667)

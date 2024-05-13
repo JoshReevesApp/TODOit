@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://lax2tpc6q7l1"]
+
+[ext_resource type="PackedScene" uid="uid://b3x1fg6fpuhvo" path="res://rbs/tri.tscn" id="1_tibbt"]
+[ext_resource type="Texture2D" uid="uid://ywckfdkontd8" path="res://badge.png" id="2_ytnvy"]
+
+[node name="Node2D" instance=ExtResource("1_tibbt")]
+
+[node name="Shape" parent="." index="0"]
+modulate = Color(0, 1, 1, 1)
+material = null
+scale = Vector2(0.561329, 0.561329)
+texture = ExtResource("2_ytnvy")
+
+[node name="CollisionShape2D" parent="." index="1"]
+scale = Vector2(1.62377, 1.62377)
+polygon = PackedVector2Array(-10.5633, -46.6546, -0.880276, -49.2955, 8.80276, -47.5349, 16.7252, -38.7322, 25.528, -39.6124, 35.211, -34.3308, 39.6124, -24.6477, 38.7322, -16.7252, 44.8941, -12.3239, 49.2955, -4.40138, 48.4152, 5.28166, 44.8941, 12.3239, 39.6124, 15.845, 40.4927, 25.528, 35.211, 35.211, 25.528, 40.4927, 16.7252, 39.6124, 9.68304, 46.6546, 0, 49.2955, -10.5633, 46.6546, -16.7252, 39.6124, -28.1688, 39.6124, -36.0913, 33.4505, -40.4927, 22.8872, -39.6124, 16.7252, -45.7744, 10.5633, -49.2955, 0.880276, -46.6546, -10.5633, -39.6124, -16.7252, -39.6124, -25.528, -35.211, -34.3308, -26.4083, -39.6124, -15.845, -39.6124)

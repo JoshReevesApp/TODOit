@@ -1,0 +1,117 @@
+[gd_scene load_steps=9 format=3 uid="uid://bbi27wtywg6p7"]
+
+[ext_resource type="FontFile" uid="uid://bi6ycfgcdmly3" path="res://Fonts/Lemon Milk Pro Medium.otf" id="1_nwj3n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umk6l"]
+bg_color = Color(0.298039, 0.65098, 0.407843, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j2x8e"]
+bg_color = Color(0, 0.709804, 0.47451, 1)
+corner_radius_top_right = 35
+shadow_color = Color(0, 0, 0, 0.0941176)
+shadow_size = 55
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_evg3o"]
+bg_color = Color(0, 0.588235, 0.215686, 1)
+corner_radius_top_right = 30
+corner_radius_bottom_right = 20
+shadow_color = Color(0, 0, 0, 0.141176)
+shadow_size = 55
+
+[sub_resource type="Gradient" id="Gradient_mwrjm"]
+offsets = PackedFloat32Array(0.797347, 0.909592, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cph4s"]
+gradient = SubResource("Gradient_mwrjm")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Gradient" id="Gradient_1fjxd"]
+offsets = PackedFloat32Array(0.741225, 0.797347, 0.909592, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_avbuo"]
+gradient = SubResource("Gradient_1fjxd")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="NotImportant" type="Panel"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 200)
+theme_override_styles/panel = SubResource("StyleBoxFlat_umk6l")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 175.745
+offset_right = 412.0
+offset_bottom = 333.745
+rotation = -0.518261
+theme_override_styles/panel = SubResource("StyleBoxFlat_j2x8e")
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 270.745
+offset_right = 328.0
+offset_bottom = 428.745
+rotation = -1.22789
+theme_override_styles/panel = SubResource("StyleBoxFlat_evg3o")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 33.4578
+offset_top = 33.7591
+offset_right = 73.4578
+offset_bottom = 56.7591
+theme_override_fonts/font = ExtResource("1_nwj3n")
+text = "TODO # 1
+Lorem ipsum dolor sit amet, consectetur adipiscing elit
+Fusce ante ante, tempo"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 156.0
+offset_right = 110.0
+offset_bottom = 179.0
+theme_override_fonts/font = ExtResource("1_nwj3n")
+text = "4/16/2024"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+flat = true
+
+[node name="CheckBox" type="CheckBox" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -56.0
+offset_top = -56.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_icons/checked = SubResource("GradientTexture2D_cph4s")
+theme_override_icons/unchecked = SubResource("GradientTexture2D_avbuo")
+button_pressed = true

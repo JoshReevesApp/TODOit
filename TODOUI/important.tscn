@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=3 uid="uid://0wwibt5h6qlb"]
+
+[ext_resource type="FontFile" uid="uid://bi6ycfgcdmly3" path="res://Fonts/Lemon Milk Pro Medium.otf" id="1_grhhl"]
+[ext_resource type="Script" path="res://TODOUI/ttdd.gd" id="1_jrs5n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujjb8"]
+bg_color = Color(0.905882, 0.356863, 0.356863, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="Gradient" id="Gradient_fdg0m"]
+offsets = PackedFloat32Array(0.797347, 0.909592, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xxand"]
+gradient = SubResource("Gradient_fdg0m")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Gradient" id="Gradient_5a11b"]
+offsets = PackedFloat32Array(0.741225, 0.797347, 0.909592, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2rqul"]
+gradient = SubResource("Gradient_5a11b")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="Important" type="Panel"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 200)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ujjb8")
+script = ExtResource("1_jrs5n")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 33.4578
+offset_top = 33.7591
+offset_right = 73.4578
+offset_bottom = 56.7591
+theme_override_fonts/font = ExtResource("1_grhhl")
+text = "TODO # 1
+Lorem ipsum dolor sit amet, consectetur adipiscing elit
+Fusce ante ante, tempo"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 156.0
+offset_right = 110.0
+offset_bottom = 179.0
+theme_override_fonts/font = ExtResource("1_grhhl")
+text = "4/16/2024"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+flat = true
+
+[node name="CheckBox" type="CheckBox" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -56.0
+offset_top = -56.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+theme_override_icons/checked = SubResource("GradientTexture2D_xxand")
+theme_override_icons/unchecked = SubResource("GradientTexture2D_2rqul")
+
+[connection signal="pressed" from="CheckBox" to="." method="_on_check_box_pressed"]

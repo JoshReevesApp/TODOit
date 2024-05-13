@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3x1fg6fpuhvo"]
+
+[ext_resource type="Shader" path="res://c.gdshader" id="1_anfbx"]
+[ext_resource type="Texture2D" uid="uid://b5eau3yxka7fv" path="res://shape.png" id="2_do20u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xj60e"]
+shader = ExtResource("1_anfbx")
+shader_parameter/c = Color(1, 0.258824, 0.298039, 1)
+
+[node name="Node2D" type="RigidBody2D"]
+
+[node name="Shape" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_xj60e")
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_do20u")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(1.5, 1.5)
+polygon = PackedVector2Array(0, -47, 8, -45, 51, 34, 50, 45, 41, 52, -42, 52, -50, 46, -52, 35, -10, -43)
