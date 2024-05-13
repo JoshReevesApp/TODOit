@@ -1,0 +1,758 @@
+[gd_scene load_steps=38 format=3 uid="uid://dgllogq854uiv"]
+
+[ext_resource type="FontFile" uid="uid://bybi7uu5yrecb" path="res://Fonts/Croogla4F.ttf" id="1_1s1pg"]
+[ext_resource type="Script" path="res://main.gd" id="1_i3c8d"]
+[ext_resource type="FontFile" uid="uid://chrq73vfgb776" path="res://Fonts/LEMONMILK-Light.otf" id="1_u36b6"]
+[ext_resource type="FontFile" uid="uid://b5nhm3k5fpbtl" path="res://Fonts/LEMONMILK-Medium.otf" id="2_2rckk"]
+[ext_resource type="FontFile" uid="uid://bi6ycfgcdmly3" path="res://Fonts/Lemon Milk Pro Medium.otf" id="4_61op7"]
+[ext_resource type="FontFile" uid="uid://bsei5rwvdcvx" path="res://Fonts/TypoRegular.otf" id="7_ekbs8"]
+[ext_resource type="FontFile" uid="uid://hpcwfp4ony1b" path="res://Fonts/Nexa+.ttf" id="8_s06dh"]
+[ext_resource type="Material" uid="uid://djkjhvrptj7sd" path="res://blur.tres" id="8_uqar7"]
+[ext_resource type="Texture2D" uid="uid://borf0gbkud4bo" path="res://mountain.png" id="11_oc514"]
+[ext_resource type="Texture2D" uid="uid://oq35drms3mi8" path="res://clipboard (2).png" id="11_uwdfi"]
+[ext_resource type="Texture2D" uid="uid://dk4chlrnlkhqa" path="res://cloud.png" id="12_3ca1v"]
+[ext_resource type="Texture2D" uid="uid://c2iv1slmxnq2m" path="res://notification.png" id="12_ypsxe"]
+[ext_resource type="Texture2D" uid="uid://wxhbsni0u03g" path="res://pin.png" id="13_hk803"]
+[ext_resource type="PackedScene" uid="uid://bar3yxmtk0y5y" path="res://rbs/c.tscn" id="14_yecqc"]
+[ext_resource type="PackedScene" uid="uid://b3x1fg6fpuhvo" path="res://rbs/tri.tscn" id="15_lj21m"]
+[ext_resource type="PackedScene" uid="uid://clunbjrpo1h6s" path="res://rbs/tear.tscn" id="16_27m73"]
+[ext_resource type="PackedScene" uid="uid://lax2tpc6q7l1" path="res://rbs/ba.tscn" id="17_qakga"]
+[ext_resource type="Shader" path="res://trans.gdshader" id="18_fm656"]
+
+[sub_resource type="Gradient" id="Gradient_v34qa"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_78rgj"]
+gradient = SubResource("Gradient_v34qa")
+fill = 1
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_soiuc"]
+rough = true
+bounce = 0.16
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2rid"]
+size = Vector2(948, 104)
+
+[sub_resource type="Gradient" id="Gradient_sn1r6"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3hbmv"]
+gradient = SubResource("Gradient_sn1r6")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_djo5s"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wcrsc"]
+bg_color = Color(0.113725, 0.113725, 0.113725, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5cinm"]
+content_margin_left = 24.0
+bg_color = Color(0.141176, 0.141176, 0.141176, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.589876, 0.589876, 0.589876, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eobhr"]
+bg_color = Color(0.437007, 0.437007, 0.437006, 1)
+border_color = Color(0.588235, 0.588235, 0.588235, 1)
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6kuj"]
+content_margin_left = 44.0
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fe1uu"]
+content_margin_left = 44.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sta8v"]
+shader = ExtResource("18_fm656")
+shader_parameter/circle_size = 1.0
+
+[sub_resource type="Gradient" id="Gradient_iwxpa"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_klm02"]
+gradient = SubResource("Gradient_iwxpa")
+
+[sub_resource type="Animation" id="Animation_ufv4t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_6xiam"]
+resource_name = "new_animation"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2.2974, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_0o54y"]
+resource_name = "new_animation_2"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(7.21, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2q8vq"]
+_data = {
+"RESET": SubResource("Animation_ufv4t"),
+"new_animation": SubResource("Animation_6xiam"),
+"new_animation_2": SubResource("Animation_0o54y")
+}
+
+[node name="Control" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i3c8d")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0941176, 0.0941176, 0.0941176, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+modulate = Color(0.518254, 0.586331, 0.568302, 0.32549)
+layout_mode = 0
+offset_right = 593.0
+offset_bottom = 603.0
+scale = Vector2(1.99153, 2.14379)
+texture = SubResource("GradientTexture2D_78rgj")
+
+[node name="Label" type="Label" parent="ColorRect"]
+z_index = 1
+layout_mode = 0
+offset_left = 65.0
+offset_top = 130.0
+offset_right = 239.0
+offset_bottom = 217.0
+theme_override_fonts/font = ExtResource("1_1s1pg")
+theme_override_font_sizes/font_size = 42
+text = "TO - DO
+LIST"
+
+[node name="Q" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 339.0
+offset_top = 149.0
+offset_right = 682.0
+offset_bottom = 218.0
+theme_override_fonts/font = ExtResource("1_u36b6")
+theme_override_font_sizes/font_size = 15
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante asemper nisi sem,"
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 339.0
+offset_top = 124.0
+offset_right = 682.0
+offset_bottom = 147.0
+theme_override_fonts/font = ExtResource("2_2rckk")
+theme_override_font_sizes/font_size = 17
+text = "Ilies Mraihi"
+autowrap_mode = 3
+
+[node name="logout" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 103.0
+offset_right = 666.0
+offset_bottom = 239.0
+focus_mode = 0
+flat = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2(18, 290)
+scale = Vector2(0.951294, 0.951294)
+physics_material_override = SubResource("PhysicsMaterial_soiuc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(390, 1318)
+shape = SubResource("RectangleShape2D_s2rid")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(879, 0)
+rotation = -1.309
+shape = SubResource("RectangleShape2D_s2rid")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-155, 6.10352e-05)
+rotation = -1.83259
+shape = SubResource("RectangleShape2D_s2rid")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-42, 887)
+rotation = -1.57079
+shape = SubResource("RectangleShape2D_s2rid")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(763, 860)
+rotation = -1.57079
+shape = SubResource("RectangleShape2D_s2rid")
+
+[node name="Node2D8" type="Node2D" parent="StaticBody2D"]
+position = Vector2(17, 160)
+scale = Vector2(0.951294, 0.951294)
+
+[node name="Node2D" parent="StaticBody2D/Node2D8" instance=ExtResource("14_yecqc")]
+position = Vector2(183.96, -344.794)
+scale = Vector2(1.0512, 1.0512)
+
+[node name="Node2D5" parent="StaticBody2D/Node2D8" instance=ExtResource("15_lj21m")]
+position = Vector2(-109, -613)
+
+[node name="Node2D9" parent="StaticBody2D/Node2D8" instance=ExtResource("16_27m73")]
+position = Vector2(822, -588)
+
+[node name="Node2D2" parent="StaticBody2D/Node2D8" instance=ExtResource("17_qakga")]
+position = Vector2(524.549, -949.234)
+scale = Vector2(1.0512, 1.0512)
+
+[node name="Node2D3" parent="StaticBody2D/Node2D8" instance=ExtResource("15_lj21m")]
+position = Vector2(555.034, -1368.66)
+scale = Vector2(1.0512, 1.0512)
+
+[node name="Node2D4" parent="StaticBody2D/Node2D8" instance=ExtResource("16_27m73")]
+position = Vector2(161.885, -859.882)
+scale = Vector2(1.0512, 1.0512)
+
+[node name="Node2D6" parent="StaticBody2D/Node2D8" instance=ExtResource("17_qakga")]
+position = Vector2(524.549, -518.242)
+scale = Vector2(1.0512, 1.0512)
+
+[node name="Node2D7" parent="StaticBody2D/Node2D8" instance=ExtResource("14_yecqc")]
+position = Vector2(144.014, -1248.83)
+scale = Vector2(1.0512, 1.0512)
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+clip_contents = false
+layout_mode = 2
+offset_left = 33.0
+offset_top = 302.0
+offset_right = 683.0
+offset_bottom = 1488.0
+grow_horizontal = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -46.0
+offset_top = 1269.0
+offset_right = 769.0
+offset_bottom = 1613.0
+texture = SubResource("GradientTexture2D_3hbmv")
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+offset_left = 33.0
+offset_top = 1507.0
+offset_right = 683.0
+offset_bottom = 1567.0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_61op7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_djo5s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_djo5s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_djo5s")
+text = "Add"
+
+[node name="Addpanel" type="Panel" parent="."]
+visible = false
+z_index = 1
+material = ExtResource("8_uqar7")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="Addpanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = 621.0
+offset_right = 360.0
+offset_bottom = 1250.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_wcrsc")
+
+[node name="LineEdit" type="LineEdit" parent="Addpanel/Panel"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -338.0
+offset_top = 89.0
+offset_right = 342.0
+offset_bottom = 157.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_ekbs8")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_5cinm")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5cinm")
+placeholder_text = "/ Add somthing to remember "
+
+[node name="Button" type="Button" parent="Addpanel/Panel/LineEdit"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 14.0
+offset_right = 666.0
+offset_bottom = 55.0
+focus_mode = 0
+theme_override_colors/font_color = Color(0.141176, 0.141176, 0.141176, 1)
+theme_override_fonts/font = ExtResource("8_s06dh")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_eobhr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eobhr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eobhr")
+theme_override_styles/focus = SubResource("StyleBoxFlat_eobhr")
+text = "↑"
+
+[node name="Mountain" type="Sprite2D" parent="Addpanel/Panel/LineEdit"]
+modulate = Color(1, 1, 1, 0.329412)
+position = Vector2(493, 60)
+scale = Vector2(0.991714, 0.991714)
+texture = ExtResource("11_oc514")
+
+[node name="Cloud" type="Sprite2D" parent="Addpanel/Panel/LineEdit"]
+modulate = Color(1, 1, 1, 0.176471)
+position = Vector2(551, 24)
+scale = Vector2(0.331333, 0.331333)
+texture = ExtResource("12_3ca1v")
+
+[node name="Cloud2" type="Sprite2D" parent="Addpanel/Panel/LineEdit"]
+modulate = Color(1, 1, 1, 0.176471)
+position = Vector2(424, 35)
+scale = Vector2(0.265877, 0.265877)
+texture = ExtResource("12_3ca1v")
+
+[node name="Button" type="Button" parent="Addpanel/Panel"]
+layout_mode = 0
+offset_top = -1400.0
+offset_right = 720.0
+focus_mode = 0
+mouse_filter = 1
+flat = true
+
+[node name="task" type="Button" parent="Addpanel/Panel"]
+layout_mode = 2
+offset_left = 39.0
+offset_top = 14.0
+offset_right = 302.0
+offset_bottom = 76.0
+size_flags_horizontal = 3
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_61op7")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_l6kuj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_l6kuj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l6kuj")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_l6kuj")
+theme_override_styles/focus = SubResource("StyleBoxFlat_l6kuj")
+text = "Task"
+alignment = 0
+expand_icon = true
+
+[node name="Checklist" type="Sprite2D" parent="Addpanel/Panel/task"]
+modulate = Color(0.845347, 0.845347, 0.845347, 1)
+position = Vector2(21, 32)
+scale = Vector2(0.130734, 0.130734)
+texture = ExtResource("11_uwdfi")
+
+[node name="reminder" type="Button" parent="Addpanel/Panel"]
+modulate = Color(0.589876, 0.589876, 0.589876, 1)
+layout_mode = 2
+offset_left = 332.0
+offset_top = 14.0
+offset_right = 489.0
+offset_bottom = 76.0
+size_flags_horizontal = 3
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_61op7")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_fe1uu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fe1uu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fe1uu")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_fe1uu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_fe1uu")
+text = "Reminder"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="Checklist" type="Sprite2D" parent="Addpanel/Panel/reminder"]
+modulate = Color(0.845347, 0.845347, 0.845347, 1)
+position = Vector2(21, 32)
+scale = Vector2(0.262, 0.262)
+texture = ExtResource("12_ypsxe")
+
+[node name="important" type="Button" parent="Addpanel/Panel"]
+modulate = Color(0.589876, 0.589876, 0.589876, 1)
+layout_mode = 2
+offset_left = 516.0
+offset_top = 14.0
+offset_right = 698.0
+offset_bottom = 76.0
+size_flags_horizontal = 3
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_61op7")
+theme_override_font_sizes/font_size = 18
+text = "Important"
+flat = true
+expand_icon = true
+
+[node name="Checklist" type="Sprite2D" parent="Addpanel/Panel/important"]
+modulate = Color(0.845347, 0.845347, 0.845347, 1)
+position = Vector2(21, 32)
+scale = Vector2(0.131, 0.131)
+texture = ExtResource("13_hk803")
+
+[node name="ColorRect" type="ColorRect" parent="Addpanel/Panel"]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 26.0
+offset_right = 319.0
+offset_bottom = 66.0
+color = Color(0.441158, 0.441158, 0.441158, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Addpanel/Panel"]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 26.0
+offset_right = 500.0
+offset_bottom = 66.0
+color = Color(0.441158, 0.441158, 0.441158, 1)
+
+[node name="EditPanel" type="Panel" parent="."]
+visible = false
+z_index = 1
+material = ExtResource("8_uqar7")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="EditPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = 621.0
+offset_right = 360.0
+offset_bottom = 1250.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_wcrsc")
+
+[node name="LineEdit" type="LineEdit" parent="EditPanel/Panel"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -338.0
+offset_top = 89.0
+offset_right = 342.0
+offset_bottom = 157.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_ekbs8")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_5cinm")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5cinm")
+placeholder_text = "/ Add somthing to remember "
+
+[node name="Button" type="Button" parent="EditPanel/Panel/LineEdit"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 14.0
+offset_right = 666.0
+offset_bottom = 55.0
+focus_mode = 0
+theme_override_colors/font_color = Color(0.141176, 0.141176, 0.141176, 1)
+theme_override_fonts/font = ExtResource("8_s06dh")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_eobhr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eobhr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eobhr")
+theme_override_styles/focus = SubResource("StyleBoxFlat_eobhr")
+text = "↑"
+
+[node name="Mountain" type="Sprite2D" parent="EditPanel/Panel/LineEdit"]
+modulate = Color(1, 1, 1, 0.329412)
+position = Vector2(493, 60)
+scale = Vector2(0.991714, 0.991714)
+texture = ExtResource("11_oc514")
+
+[node name="Cloud" type="Sprite2D" parent="EditPanel/Panel/LineEdit"]
+modulate = Color(1, 1, 1, 0.176471)
+position = Vector2(551, 24)
+scale = Vector2(0.331333, 0.331333)
+texture = ExtResource("12_3ca1v")
+
+[node name="Cloud2" type="Sprite2D" parent="EditPanel/Panel/LineEdit"]
+modulate = Color(1, 1, 1, 0.176471)
+position = Vector2(424, 35)
+scale = Vector2(0.265877, 0.265877)
+texture = ExtResource("12_3ca1v")
+
+[node name="Button" type="Button" parent="EditPanel/Panel"]
+layout_mode = 0
+offset_top = -1400.0
+offset_right = 720.0
+focus_mode = 0
+mouse_filter = 1
+flat = true
+
+[node name="task" type="Button" parent="EditPanel/Panel"]
+layout_mode = 2
+offset_left = 39.0
+offset_top = 14.0
+offset_right = 302.0
+offset_bottom = 76.0
+size_flags_horizontal = 3
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_61op7")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_l6kuj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_l6kuj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l6kuj")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_l6kuj")
+theme_override_styles/focus = SubResource("StyleBoxFlat_l6kuj")
+text = "Task"
+alignment = 0
+expand_icon = true
+
+[node name="Checklist" type="Sprite2D" parent="EditPanel/Panel/task"]
+modulate = Color(0.845347, 0.845347, 0.845347, 1)
+position = Vector2(21, 32)
+scale = Vector2(0.130734, 0.130734)
+texture = ExtResource("11_uwdfi")
+
+[node name="reminder" type="Button" parent="EditPanel/Panel"]
+modulate = Color(0.589876, 0.589876, 0.589876, 1)
+layout_mode = 2
+offset_left = 332.0
+offset_top = 14.0
+offset_right = 489.0
+offset_bottom = 76.0
+size_flags_horizontal = 3
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_61op7")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_fe1uu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fe1uu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fe1uu")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_fe1uu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_fe1uu")
+text = "Reminder"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="Checklist" type="Sprite2D" parent="EditPanel/Panel/reminder"]
+modulate = Color(0.845347, 0.845347, 0.845347, 1)
+position = Vector2(21, 32)
+scale = Vector2(0.262, 0.262)
+texture = ExtResource("12_ypsxe")
+
+[node name="important" type="Button" parent="EditPanel/Panel"]
+modulate = Color(0.589876, 0.589876, 0.589876, 1)
+layout_mode = 2
+offset_left = 516.0
+offset_top = 14.0
+offset_right = 698.0
+offset_bottom = 76.0
+size_flags_horizontal = 3
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_61op7")
+theme_override_font_sizes/font_size = 18
+text = "Important"
+flat = true
+expand_icon = true
+
+[node name="Checklist" type="Sprite2D" parent="EditPanel/Panel/important"]
+modulate = Color(0.845347, 0.845347, 0.845347, 1)
+position = Vector2(21, 32)
+scale = Vector2(0.131, 0.131)
+texture = ExtResource("13_hk803")
+
+[node name="ColorRect" type="ColorRect" parent="EditPanel/Panel"]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 26.0
+offset_right = 319.0
+offset_bottom = 66.0
+color = Color(0.441158, 0.441158, 0.441158, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="EditPanel/Panel"]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 26.0
+offset_right = 500.0
+offset_bottom = 66.0
+color = Color(0.441158, 0.441158, 0.441158, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = 1
+material = SubResource("ShaderMaterial_sta8v")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -436.0
+offset_right = 444.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture1D_klm02")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
+libraries = {
+"": SubResource("AnimationLibrary_2q8vq")
+}
+autoplay = "new_animation_2"
+
+[connection signal="pressed" from="ColorRect/logout" to="." method="_on_logout_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="text_submitted" from="Addpanel/Panel/LineEdit" to="." method="AddTodo"]
+[connection signal="pressed" from="Addpanel/Panel/LineEdit/Button" to="." method="Addtodo"]
+[connection signal="pressed" from="Addpanel/Panel/Button" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Addpanel/Panel/task" to="." method="_on_task_pressed"]
+[connection signal="pressed" from="Addpanel/Panel/reminder" to="." method="_on_reminder_pressed"]
+[connection signal="pressed" from="Addpanel/Panel/important" to="." method="_on_important_pressed"]
+[connection signal="text_submitted" from="EditPanel/Panel/LineEdit" to="." method="EditTodo"]
+[connection signal="pressed" from="EditPanel/Panel/LineEdit/Button" to="." method="editTODO"]
+[connection signal="pressed" from="EditPanel/Panel/Button" to="." method="_on_buttoneditback_pressed"]
+[connection signal="pressed" from="EditPanel/Panel/task" to="." method="_on_task_pressed"]
+[connection signal="pressed" from="EditPanel/Panel/reminder" to="." method="_on_reminder_pressed"]
+[connection signal="pressed" from="EditPanel/Panel/important" to="." method="_on_important_pressed"]

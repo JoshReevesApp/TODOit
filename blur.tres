@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://djkjhvrptj7sd"]
+
+[ext_resource type="Shader" path="res://blur.gdshader" id="1_k3lni"]
+
+[resource]
+shader = ExtResource("1_k3lni")
+shader_parameter/mix_amount = 0.492
+shader_parameter/color_over = Color(0, 0, 0, 1)
+shader_parameter/amount = 0.565
